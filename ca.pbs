@@ -1,0 +1,27 @@
+#!/bin/bash
+# Number of nodes and processors per node requested: 
+#PBS -l nodes=1:ppn=16
+# Time requested (in hh:mm:ss format):
+#PBS -l walltime=00:01:00
+# Name of stdout file:
+#PBS -o ca.out
+# Name of stderr file:
+#PBS -e ca.err
+# Queue name (do not change this):
+#PBS -q training
+# Account code (do not change this):
+#PBS -A Research_Project-IscaTraining
+
+# Set the number of OpenMP threads to use
+export OMP_NUM_THREADS=16
+
+# Change into the directory the job was submitted from
+cd ${PBS_O_WORKDIR}
+
+# Load the GCC module to make sure we pick up the correct run time libraries
+module load GCC
+
+# Run the "hello" executable in this directory
+./lukeca
+
+# End of file 
