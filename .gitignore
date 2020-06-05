@@ -10,9 +10,6 @@
 # Plots
 *.PNG
 
-# pdfs
-*.pdf
-
 # Compiled class file
 *.class
 
